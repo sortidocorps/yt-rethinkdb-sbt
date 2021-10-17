@@ -1,18 +1,18 @@
-#Youtube prez RethinkDB
+# Youtube prez RethinkDB
 
 https://rethinkdb.com/
 
-Install:
+## Install:
 https://rethinkdb.com/docs/install/
 
-Admin Console:
+## Admin Console:
 http://localhost:8080/#tables
 
-ReSql:
+## ReSql:
 https://rethinkdb.com/docs/sql-to-reql/java/
 
-Guide:
+## Guide:
 https://rethinkdb.com/docs/guide/java/
 
-Swagger:
+## Swagger:
 http://localhost:8090/swagger-ui
