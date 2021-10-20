@@ -1,19 +1,16 @@
 package com.example.rethinkdb.rethinkdb.models;
 
-import java.time.OffsetDateTime;
 
 public class ChatMessage {
     public String message;
     public String from;
-    public OffsetDateTime time;
 
     public ChatMessage() {
     }
 
-    public ChatMessage(String message, String from, OffsetDateTime time) {
+    public ChatMessage(String message, String from) {
         this.message = message;
         this.from = from;
-        this.time = time;
     }
 
     public String getMessage() {
@@ -32,11 +29,4 @@ public class ChatMessage {
         this.from = from;
     }
 
-    public OffsetDateTime getTime() {
-        return time;
-    }
-
-    public void setTime(OffsetDateTime time) {
-        this.time = time;
-    }
 }

@@ -7,10 +7,7 @@ import com.rethinkdb.RethinkDB;
 import com.rethinkdb.net.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -28,9 +25,9 @@ public class ChatController {
         this.connectionFactory = connectionFactory;
     }
 
+    @CrossOrigin(origins = "http://localhost:8081")
     @RequestMapping(method = RequestMethod.POST)
     public ChatMessage postMessage(@RequestBody ChatMessage chatMessage) {
-        chatMessage.setTime(OffsetDateTime.now());
         Result<Object> run = r.db("chat").table("messages").insert(chatMessage)
                 .run(connectionFactory.createConnection());
 
@@ -38,6 +35,7 @@ public class ChatController {
         return chatMessage;
     }
 
+    @CrossOrigin(origins = "http://localhost:8081")
     @RequestMapping(method = RequestMethod.GET)
     public List<ChatMessage> getMessages() {
 
