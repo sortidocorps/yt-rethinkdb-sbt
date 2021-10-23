@@ -39,11 +39,10 @@ public class ChatController {
     @RequestMapping(method = RequestMethod.GET)
     public List<ChatMessage> getMessages() {
 
-        return (List<ChatMessage>) r.db("chat").table("messages")
-                .orderBy().optArg("index", r.desc("time"))
+        var result = r.db("chat").table("messages")
                 .limit(20)
-                .orderBy("time")
                 .run(connectionFactory.createConnection(), ChatMessage.class);
 
+        return result.toList();
     }
 }
