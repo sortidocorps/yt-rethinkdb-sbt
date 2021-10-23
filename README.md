@@ -1,4 +1,5 @@
 # Youtube prez RethinkDB
+https://www.youtube.com/watch?v=kK4j_ik3KFI
 
 https://rethinkdb.com/
 
